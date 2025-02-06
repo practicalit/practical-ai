@@ -4,29 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One stop for your AI needs</title>
-    <style>
-        #header1 {
-            color: red;
-        }
-        #header2 {
-            color: green;
-        }
-        #collaborators {
-            color: blue;
-        }
-        /* #file {
-            color: brown;
-        }
-        #name {
-            color: brown;
-        }
-        #contribute {
-            color: brown;
-        } */
-        .color-brown {
-            color: brown
-        }
-    </style>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
     <!-- this is the comment -->
@@ -46,9 +24,9 @@
         <tbody>
             <!-- add your name and Contribution using <tr> tag and <td>-->
                 <tr>
-                    <td>Rajeev</td>
-                    <td>AI vs human intaligence</td>
-                    <td>ai-vs-human.html</td>
+                    <td class="backgroundColor">Rajeev</td>
+                    <td style="color:blue; font-weight: bold;">AI vs human intaligence</td>
+                    <td style="color:blue; font-weight: bold;">ai-vs-human.html</td>
                 </tr>
                 <tr>
                     <td>Gedeyon</td>
@@ -64,21 +42,19 @@
         <a href="https://google.com">Take me to google</a>
     </table>
     <h1 id="header3">More on AI</h1>
+    <div class="color-brown">This is footer element</div>
+    <div id="last_div">Just for fun</div>
+
+    <div id="parent">
+        I am the granny
+        <div id="child">
+            I am the child
+            <div id="grand_child">
+                I am the grand child
+            </div>
+        </div>
+    </div>
+    <p class="getting-ai">Getting into the AI as early as possible is important</p>
+    <a class="footer" href="https://thepracticalit.com"> &copy; 2025 Practical IT</a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
