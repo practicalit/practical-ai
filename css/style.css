@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+/* Group selctor*/
+h1, h2 {
+    color: #333;
+}
+/* Discuss what this selector type is*/
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+}
+section.header-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    /*What woudl happen if list-style is not none*/
+    list-style: none;
+    gap: 10px;
+}
+
+/* What does this selector do?*/
+header h1 {
+    margin: 0;
+}
+
+/* Sections */
+section.basic {
+    margin: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px; /* What does this property do? */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #333;
+}
+
+/* Image Gallery */
+.image-gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Links */
+a {
+    color: #3b3de1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/*Code */
+.code {
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for code */
+    color: brown;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
