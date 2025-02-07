@@ -9,6 +9,8 @@
             display: flex;
             flex-direction: row;
             justify-content:space-between;
+            margin-bottom: 10px;
+            height: 40px;
         }
         .header section {
             /* border: 1px solid black; */
@@ -22,26 +24,70 @@
         }
         .links {
             display: flex;
+            justify-content: center;
         }
         .link {
-            color: red;
-            margin-right: 5px;
-            border: 1px solid green;
+            color: blue;
+            margin-right: 15px;
+            background-color: deea64;
+        }
+        .header-content {
+            border: 1px solid #e0e2f7;
+            background-color: #c7caf2;
+        }
+        .logo {
+            width: 20%;
+        }
+        .middle {
+            color: #0c127d;
+            font-weight: bold;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .user {
+
+        }
+        .content {
+            height: 160px;
+            background-color: #f2f4ef;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .content section {
+            border: 1px solid black;
+            width: 48%;
+            padding: 10px;;
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <section class="container">
         <section class="header">
-            <section class="logo">Logo Here</section>
-            <section class="middle">ChatGPT and Its usage</section>
-            <section class="user">Login | Register | Vote</section>
+            <section class="header-content logo">Logo Here</section>
+            <section class="header-content middle">ChatGPT and Its usage</section>
+            <section class="header-content user">Login | Register | Vote</section>
         </section>
         <section class="links">
             <section class="link">Home</section>
             <section class="link">About</section>
             <section class="link">History</section>
             <section class="link">Contact Us</section>
+        </section>
+        <section class="content">
+            <section class="left">
+                <section>Become Member</section>
+                <section>Tell your story</section>
+                <section>Donate please</section>
+            </section>
+            <section class="right">Some content goes here.</section>
         </section>
     </section>
 </body>
