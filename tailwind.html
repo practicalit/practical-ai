@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Example</title>
+    <!-- Add Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">My Tailwind Site</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="flex-grow py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-semibold text-center mb-6">Welcome to Our Website</h2>
+            <p class="text-lg text-center text-gray-700 mb-6">Tailwind CSS makes it easy to build modern and responsive web pages quickly and efficiently.</p>
+            
+            <div class="flex justify-center gap-8">
+                <div class="bg-white shadow-md rounded-lg p-6 w-64">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">Feature 1</h3>
+                    <p class="text-gray-600">A brief description of what this feature can do for you.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6 w-64">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">Feature 2</h3>
+                    <p class="text-gray-600">Another feature that makes our service unique and valuable.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6 w-64">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">Feature 3</h3>
+                    <p class="text-gray-600">A final feature that helps enhance your experience.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 My Tailwind Site. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
