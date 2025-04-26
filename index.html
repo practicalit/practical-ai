@@ -1,49 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Learn about AI</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="assets/practical-it-logo.png" width="7%" />
-        <section class="header-content">
-            <h1>Fun and Interactive way of learing about AI.</h1>
-            <p>You will learn and contribute to the world of AI. Congrats.</p>
-        </section>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="history.html">History</a></li>
-            <li><a href="future.html">Future</a></li>
-            <li><a href="type.html">Types of AI</a></li>
-            <li><a href="llm.html">LLM</a></li>
-            <li><a href="daily-life.html">Daily life</a></li>
-            <li><a href="health-care.html">Health</a></li>
-            <li><a href="business-finance.html">Business</a></li>
-            <li><a href="ethics-concerns.html">Ethics</a></li>
-            <li><a href="ai-vs-human.html">AI vs Human</a></li>
-        </ul>
-    </nav>
+<div class="card">
+    <div class="search">
+        <input type="text" placeholder="enter city name" spellcheck="false">
+        <button><img src="images/search.png"></button>
+    </div>
+    <div class="error">
+        <p>Invalid city name</p>
+    </div>
+    <div class="weather">
+        <img src="images/rain.png" class="weather-icon">
+        <h1 class="temp">22°c</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+            <div class="col">
+                <img src="images/humidity.png">
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="images/wind.png">
+                <div>
+                    <p class="wind">15 km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <section class="intro basic">
-        <h2>Lab session:</h2>
-        <ul>
-            <li>Pull the latest from the repository use <span class="code">git pull</span></li>
-            <li>Use live server to open the index.html [Ask instructor if you don't have it]</li>
-            <li>Discuss why there are css and asset folders</li>
-            <li>Open the <span class="code">style.css</span> file and list new properties you found there. </li>
-            <li>What does the <span class="code">a:hover</span> do for the link. What do you see when you hover over the links?</li>
-            <li>You see the sections have curved corners, which property is responsible for that?</li>
-            <li>Create your respective topic files by copy pasting the sample.html and work on the task.</li>
-        </ul>
-    </section>
+<script>
 
-    <footer>
-        <p>&copy; 2025. All rights reserved. <a href="https://thepracticalit.com">Practical IT</a></p>
-    </footer>
+const apiKey = "1db88a69132d2ee31463baeeaebb7a2c";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+const weatherIcon = document.querySelector(".weather-icon");
+
+async function checkWeather(city){
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+    if(response.status == 404){
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+    }else{
+        var data = await response.json();
+
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+if(data.weather[0].main == "Clouds"){
+    weatherIcon.src = "images/clouds.png";
+}
+else if(data.weather[0].main == "Clear"){
+    weatherIcon.src = "images/clear.png";
+}
+else if(data.weather[0].main == "Rain"){
+    weatherIcon.src = "images/rain.png";
+}
+else if(data.weather[0].main == "Drizzle"){
+    weatherIcon.src = "images/drizzle.png";
+}
+else if(data.weather[0].main == "Mist"){
+    weatherIcon.src = "images/mist.png";
+}
+
+document.querySelector(".weather").style.display = "block";
+document.querySelector(".error").style.display = "none";
+    }
+
+    
+
+}
+
+
+searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value);
+})
+
+
+</script>
+
+<footer>
+    <p>Created by Johan Cortez. All rights reserved. <a href="https://thepracticalit.com">Practical IT</a></p>
+</footer>
 </body>
 </html>
